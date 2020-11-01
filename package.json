@@ -1,0 +1,22 @@
+{
+  "name": "takabot",
+  "version": "1.0.0",
+  "description": "Discord bot TAKA",
+  "main": "takabot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azuradara/TAKABOT.git"
+  },
+  "author": "Dara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azuradara/TAKABOT/issues"
+  },
+  "homepage": "https://github.com/azuradara/TAKABOT#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  }
+}
