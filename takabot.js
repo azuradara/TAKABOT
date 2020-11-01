@@ -11,9 +11,9 @@ const roleEmbed = new Discord.MessageEmbed()
   .setTitle('Role select')
   .setFooter('TAKA_/高')
   .setDescription('React to an emote to get the role associated with it.\n\nMembership in cut gang is not guaranteed by the role, you must first be judged by the enitrety of the cut gang council on your mettle, and then send a picture of your pp next to a piece of paper with your signature to prove that **The Cut One**:tm: does in fact pertain to you.')
-  .AddField("<:amongus:772371006957944842>", "**Among Us**", true)
-  .AddField("<:raycon:772371525180325928>", "**Raycon Homies**", true)
-  .AddField("✂️", "**Cut Gang**", true);
+  .addField("<:amongus:772371006957944842>", "**Among Us**", true)
+  .addField("<:raycon:772371525180325928>", "**Raycon Homies**", true)
+  .addField("✂️", "**Cut Gang**", true);
 
 
 client.on('ready', () => {
