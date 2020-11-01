@@ -13,13 +13,13 @@ client.on('ready', () => {
     roleClaim(client)
 
     command(client, 'status', (message) => {
-      const content = message.content.replace('!status ', '')
+      const content = message.content.replace('tk/status ', '')
   
       client.user.setPresence({
         activity: {
           name: content,
           type: 0,
-        },
+          },
       })
     })
   })
