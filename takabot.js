@@ -8,7 +8,7 @@ const roleMessage = require('./role-message')
 const roleClaim = require('./role-claim')
 
 client.on('ready', () => {
-    console.log('The client is ready!')
+    console.log('高TAKA_client ready!')
   
     roleClaim(client)
   })
