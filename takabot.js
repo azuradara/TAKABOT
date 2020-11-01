@@ -14,7 +14,6 @@ client.on('ready', () => {
 
     command(client, 'status', (message) => {
       const content = message.content.replace('!status ', '')
-      // "!status hello world" -> "hello world"
   
       client.user.setPresence({
         activity: {
