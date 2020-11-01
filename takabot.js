@@ -19,7 +19,7 @@ client.on('ready', () => {
     })
 
     command(client, 'status', message => {
-        const content = message.content.replace(`${prefix}status `, '')
+        const content = message.content.replace('tk/status ', '')
         client.user.setPresence({
             activity: {
                 name: content,
