@@ -9,7 +9,7 @@ new token = process.env.TOKEN
 client.on('ready', () => {
     console.log('TAKA_client ready!')
 
-    command(client, 'ping', message => {
+    command(client, ['ping', 'test'], message => {
         message.channel.send('Pong!')
     })
 })
