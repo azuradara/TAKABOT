@@ -9,7 +9,8 @@ module.exports = client => {
     const emojis = {
         amongus: 'Among Us',
         raycon: 'Raycon Homies',
-        cutgang: 'Cut Gang'
+        cutgang: 'Cut Gang',
+        popoga: 'Uncut Gang'
     }
 
     const reactions = []
