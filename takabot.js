@@ -11,6 +11,22 @@ client.on('ready', () => {
     command(client, ['ping', 'test'], (message) => {
         message.channel.send('Pong!')
     })
+
+    command(client, 'servers', message => {
+        client.guilds.cache.forEach(guild => {
+            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members`)
+        })
+    })
+
+    command(client, 'status', message => {
+        const content = message.content.replace(`${prefix}status `, '')
+        client.user.setPresence({
+            activity: {
+                name: content,
+                type: 0,
+            },
+        })
+    })
 })
 
 client.login(process.env.TOKEN)
