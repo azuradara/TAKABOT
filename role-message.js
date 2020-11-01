@@ -15,7 +15,7 @@ module.exports = async (client, id, text, reactions = []) => {
         addReactions(message, reactions)
       })
     } else {
-      for (const message of message) {
+      for (const message of messages) {
         message[1].edit(text)
         addReactions(message[1], reactions)
       }
