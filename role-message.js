@@ -6,7 +6,7 @@ const addReactions = (message, reactions) => {
   }
 }
 
-module.exports = (client, id, text, reactions = []) => {
+module.exports = async (client, id, text, reactions = []) => {
   const channel = await client.channels.fetch(id)
 
   channel.message.fetch().then((messages) => {
