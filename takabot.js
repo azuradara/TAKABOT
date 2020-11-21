@@ -1,4 +1,6 @@
 const Discord = require('discord.js')
+const WOKCommands = require('wokcommands')
+
 const client = new Discord.Client()
 
 
@@ -10,6 +12,10 @@ const roleClaim = require('./role-claim')
 client.on('ready', () => {
     console.log('高TAKA_client ready!')
   
+    new WOKCommands(client, 'commands', 'features')
+      .setPrefix('~')
+      .setMongoPath(process.env.mongoPath)
+
     roleClaim(client)
 
     command(client, 'status', (message) => {
