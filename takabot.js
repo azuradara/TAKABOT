@@ -14,7 +14,7 @@ client.on('ready', () => {
   
     new WOKCommands(client, 'commands', 'features')
       .setPrefix('~')
-      .setMongoPath(process.env.mongoPath)
+      .setMongoPath(process.env.MONGO_URI)
 
     roleClaim(client)
 
