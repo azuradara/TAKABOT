@@ -1,3 +1,4 @@
 {
-    "prefix": "tk/"
+    "token": "NzcyMzMzOTY4NjY5NTQwNDMz.X55KDw.ebieY2Pdtc6xxaacaqgAlustiNU",
+    "mongodbpath": "mongodb+srv://TAKAbot:Ur9BAtbqbcpy6JUt@cluster0.1rpzf.mongodb.net/taka-db?retryWrites=true&w=majority"
 }

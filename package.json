@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/azuradara/TAKABOT#readme",
   "dependencies": {
-    "discord.js": "^12.4.1"
+    "@discordjs/opus": "github:discordjs/opus",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.10.15",
+    "wokcommands": "^1.0.1"
   }
 }
