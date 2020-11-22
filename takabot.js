@@ -14,7 +14,7 @@ client.on('ready', () => {
   
     new WOKCommands(client, 'commands', 'features')
       .setPrefix('~')
-      .setMongoPath('mongodb+srv://TAKAbot:Ur9BAtbqbcpy6JUt@cluster0.1rpzf.mongodb.net/taka-db?retryWrites=true&w=majority')
+      .setMongoPath(process.env.MONGO_URI)
 
     roleClaim(client)
 
