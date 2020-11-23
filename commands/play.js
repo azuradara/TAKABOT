@@ -15,7 +15,7 @@ module.exports = {
         }
         if (args[0] === 'list') {
             var list
-            fs.readdir('../assets/', (err, files) => {
+            fs.readdir('../assets', (err, files) => {
                 files.forEach(file => {
                     list = file+'\n'
                 });
