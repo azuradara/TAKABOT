@@ -21,7 +21,12 @@
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
+    "jimp": "^0.16.1",
     "mongoose": "^5.10.15",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "sharp": "^0.26.3",
+    "tui-image-editor": "^3.10.1",
     "wokcommands": "^1.0.1"
   }
 }
