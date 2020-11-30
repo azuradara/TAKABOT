@@ -20,7 +20,7 @@ module.exports = {
             await delay(2000);
             message.channel.send('jk <:bachaha:782406002321653780>')
             voice.channel.join().then((connection) => {
-                connection.play(path.join(__dirname, `../assets/${args[0]}.mp3`))
+                connection.play(path.join(__dirname, `../assets/sounds/${args[0]}.mp3`))
             })
             return
         }
@@ -35,7 +35,7 @@ module.exports = {
         }
 
         voice.channel.join().then((connection) => {
-            connection.play(path.join(__dirname, `../assets/${args[0]}.mp3`))
+            connection.play(path.join(__dirname, `../assets/sounds/${args[0]}.mp3`))
         })
     }
     

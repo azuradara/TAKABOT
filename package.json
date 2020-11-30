@@ -28,6 +28,6 @@
     "request": "^2.88.2",
     "sharp": "^0.26.3",
     "tui-image-editor": "^3.10.1",
-    "wokcommands": "^1.0.1"
+    "wokcommands": "^1.1.3"
   }
 }
