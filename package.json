@@ -18,6 +18,8 @@
   "homepage": "https://github.com/azuradara/TAKABOT#readme",
   "dependencies": {
     "@discordjs/opus": "github:discordjs/opus",
+    "common-tags": "^1.8.0",
+    "crypto": "^1.0.1",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
