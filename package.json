@@ -23,6 +23,7 @@
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
+    "googleapis": "^65.0.0",
     "jimp": "^0.16.1",
     "mongoose": "^5.10.15",
     "node-fetch": "^2.6.1",

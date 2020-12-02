@@ -8,7 +8,7 @@ module.exports = {
     maxArgs: 0,
     async run(message) {
         const catEmbed = new Discord.MessageEmbed()
-            .setColor('#FF6D2D')
+            .setColor('#FFFFFF')
             .setFooter('TAKA_/高')
             .setTimestamp()
         try {
