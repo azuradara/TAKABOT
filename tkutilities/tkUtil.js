@@ -1,4 +1,5 @@
 const { stripIndents } = require('common-tags')
+const { User } = require('discord.js')
 const yesnocon = require('../assets/json/yesno.json')
 const yes = yesnocon.yes
 const no = yesnocon.no
@@ -24,6 +25,25 @@ module.exports = class tkUtil {
         const len = arr.length;
         if (len === 0) return ''
         if (len === 1) return arr[0]
-        return `${arr.slice()}`
+        return `${arr.slice(0, -1).join(', ')}${len > 1 ? `${len > 2 ? ',' : ''} ${conj} ` : ''}${arr.slice(-1)}`
+    }
+
+    static list2(arr, conj = 'and') {
+        const len = arr.length;
+        if (len === 0) return ''
+        if (len === 1) return arr[0]
+        return `${arr.slice(0, -1).join('\n')}${len > 1 ? `${len > 2 ? '' : ''} ${conj} ` : ''}${arr.slice(-1)}`
+    }
+
+    static async tryReact(message, user, emoji, buEmoji) {
+        const dm = !message.guild
+        if (buEmoji && (!dm && message.channel.permissionsFor(user).has('USE_EXTERNAL_EMOJIS'))) {
+            emoji = buEmoji
+        }
+        if (dm || message.channel.permissionsFor(user).has(['ADD_REACTIONS', 'READ_MESSAGE_HISTORY'])) {
+            try {
+                await message.react(emoji)
+            } catch { return null }
+        } return null
     }
 }

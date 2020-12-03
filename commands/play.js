@@ -1,6 +1,9 @@
 const path = require('path')
 var fs = require('fs')
-const delay = ms => new Promise(res => setTimeout(res, ms))
+const Discord = require('discord.js')
+const { list2, tryReact } = require('../tkutilities/tkUtil')
+const sounds = require('../assets/json/sounds_list.json')
+const soundList = sounds.map(sound => sound[sound.length - 1].replace(/\.mp3$/, ''))
 
 module.exports = {
     aliases: ['p'],
@@ -10,32 +13,24 @@ module.exports = {
     async run(message, args) {
         const { voice } = message.member
         
+        if (args[0] === 'list') {
+            const listEmbed = new Discord.MessageEmbed()
+                .setFooter('TAKA_/高')
+                .setTitle('List of playable sounds:')
+                .setDescription(list2(soundList, '\n'))
+            message.channel.send(listEmbed)
+            return
+        }
+
         if (!voice.channelID) {
             message.reply('get on vc first ediot')
             return
         }
 
-        if(voice.id === '277757688841240578') {
-            message.reply('na <:PeepoIgnore:685675172572692504>')
-            await delay(2000);
-            message.channel.send('jk <:bachaha:782406002321653780>')
-            voice.channel.join().then((connection) => {
-                connection.play(path.join(__dirname, `../assets/sounds/${args[0]}.mp3`))
-            })
-            return
-        }
-
-        if(voice.id === '332993753629589515') {
-            message.reply('we dont fucks with simps round these parts <:PeepoIgnore:685675172572692504>')
-            await delay(2000);
-            message.channel.send('...')
-            await delay(2000)
-            message.channel.send('yeah we still dont fucks with simps')
-            return
-        }
-
-        voice.channel.join().then((connection) => {
+        voice.channel.join().then(async (connection) => {
             connection.play(path.join(__dirname, `../assets/sounds/${args[0]}.mp3`))
+            await tryReact(message, this.client.user, '<a:catrave:744314907520139294>')
+            return null
         })
     }
     
