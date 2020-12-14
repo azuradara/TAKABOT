@@ -46,4 +46,8 @@ module.exports = class tkUtil {
             } catch { return null }
         } return null
     }
+
+    static embedURL(title, url, display) {
+        return `[${title}](${url.replaceAll(')', '%29')}${display ? ` "${display}"` : ''})`
+    }
 }
