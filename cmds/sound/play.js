@@ -23,12 +23,12 @@ module.exports = class PlayCommand extends Command {
             args: [
                 {
                     key: 'sound',
-                    prompt: `Pick a sound ediot <a:bacHaha:425834071076241429> ${list2(pickedSound, 'or')}`,
+                    prompt: `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list2(pickedSound, 'or')}`,
                     type: 'string',
                     validate: sound => {
                         const picked = sound.toLowerCase().replace(/ /g, '-')   
                         if (pickedSound.includes(picked)) return true
-                        return listEmbed
+                        return `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list2(pickedSound, 'or')}`
                     },
                     parse: sound => {
                         const picked = sound.toLowerCase().replace(/ /g, '-')
