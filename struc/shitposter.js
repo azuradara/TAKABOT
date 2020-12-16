@@ -33,6 +33,18 @@ module.exports = class ShitposterClient extends WebhookClient {
         const { body } = await request
             .get(`https://www.reddit.com/r/${subreddit}/hot.json`)
             .query({ limit: 100})
-            
+        const posts = body.data.children.filter(post => {
+            if (!post.data) return false
+            return this.postTypes.includes(post.data.post_hint)
+                && post.data.url
+                && post.data.title
+                && nsfw ? true : !post.data.over_18
+        })
+        if (!posts.length) return null
+        return posts[Math.floor(Math.random() * posts.length)].data
+    }
+    
+    randomSubreddit() {
+        return this.subreddits[Math.floor(Math.random() * this.subreddits.length)]
     }
 }
