@@ -19,7 +19,9 @@ client.registry
   .registerTypesIn(path.join(__dirname, 'types'))
   .registerGroups([
     ['random', 'Random'],
-    ['analyzers', 'Analyzers']
+    ['analyzers', 'Analyzers'],
+    ['util', 'Utility'],
+    ['sound', 'Sound']
   ])
   // .registerDefaultCommands({
   //   help: false,
