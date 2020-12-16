@@ -22,7 +22,8 @@ client.registry
     ['analyzers', 'Analyzers'],
     ['util', 'Utility'],
     ['sound', 'Sound'],
-    ['text', 'Text']
+    ['text', 'Edit Text'],
+    ['reminder', 'Reminder']
   ])
   // .registerDefaultCommands({
   //   help: false,

@@ -15,7 +15,7 @@ module.exports = class timerStruc {
     }
 
     async setTimer(channelID, time, userID, title, updateRedis = true) {
-        const data = { time: new Date(Data.now() + time).toISOString(), channelID, userID, title }
+        const data = { time: new Date(Date.now() + time).toISOString(), channelID, userID, title }
         const timeout = setTimeout(async () => {
             try {
                 const channel = await this.client.channels.fetch(channelID)
