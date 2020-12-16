@@ -1,1 +1,0 @@
-Worker: node takabot.js
