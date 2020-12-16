@@ -21,7 +21,8 @@ client.registry
     ['random', 'Random'],
     ['analyzers', 'Analyzers'],
     ['util', 'Utility'],
-    ['sound', 'Sound']
+    ['sound', 'Sound'],
+    ['text', 'Text']
   ])
   // .registerDefaultCommands({
   //   help: false,

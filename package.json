@@ -19,6 +19,7 @@
   "dependencies": {
     "@discordjs/opus": "github:discordjs/opus",
     "common-tags": "^1.8.0",
+    "custom-translate": "^2.2.8",
     "discord.js": "^12.4.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
     "dotenv": "^8.2.0",
