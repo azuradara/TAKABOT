@@ -1,3 +1,5 @@
+const { MessageEmbed } = require('discord.js')
+
 module.exports = class timerStruc {
     constructor(client) {
         Object.defineProperty(this, 'client', { value : client })
@@ -13,13 +15,23 @@ module.exports = class timerStruc {
         }
         return this
     }
-
+    
     async setTimer(channelID, time, userID, title, updateRedis = true) {
         const data = { time: new Date(Date.now() + time).toISOString(), channelID, userID, title }
         const timeout = setTimeout(async () => {
             try {
                 const channel = await this.client.channels.fetch(channelID)
-                await channel.send(`<:bacTime:787872535228317716> <@${userID}>, s'time \n **${title}**.`)
+                const reminderEmbed = new MessageEmbed()
+                    .setTitle(`s'time ${title}`)
+                    .setDescription('Getcho lazy bum up and do the deed')
+                    .setThumbnail('https://cdn.discordapp.com/emojis/787872535228317716.png?v=1')
+                    .setColor('#FFFFFF')
+                    .setFooter('TAKA_/高')
+                    .setTimestamp()
+
+
+                await channel.send(`<@${userID}>`)
+                await channel.send(reminderEmbed)
             } finally {
                 await this.client.redis.hdel('timer', `${channelID}-${userID}`)
             }
