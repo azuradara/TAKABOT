@@ -1,6 +1,6 @@
 const Command = require('../../struc/Cmd')
 const path = require('path')
-const { list2, tryReact } = require('../../tkutilities/tkUtil')
+const { list, tryReact } = require('../../tkutilities/tkUtil')
 const sounds = require('../../assets/json/sounds_list.json')
 const pickedSound = sounds.map(sound => sound[sound.length - 1].replace(/\.mp3$/, ''))
 const { MessageEmbed } = require('discord.js')
@@ -13,7 +13,7 @@ module.exports = class PlayCommand extends Command {
             group: 'sound',
             memberName: 'play',
             description: 'Plays a sound in call.',
-            detauls: `**Sounds:** ${pickedSound.join(', ')}`,
+            details: `**Sounds:** ${pickedSound.join(', ')}`,
             guildOnly: true,
             throttling: {
                 usages: 1,
@@ -23,12 +23,12 @@ module.exports = class PlayCommand extends Command {
             args: [
                 {
                     key: 'sound',
-                    prompt: `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list2(pickedSound, 'or')}`,
+                    prompt: `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list(pickedSound, 'or')}`,
                     type: 'string',
                     validate: sound => {
                         const picked = sound.toLowerCase().replace(/ /g, '-')   
                         if (pickedSound.includes(picked)) return true
-                        return `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list2(pickedSound, 'or')}`
+                        return `Pick a sound ediot <:bacPDeadge:782375944379301900>\n${list(pickedSound, 'or')}`
                     },
                     parse: sound => {
                         const picked = sound.toLowerCase().replace(/ /g, '-')

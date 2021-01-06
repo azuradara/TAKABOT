@@ -23,7 +23,8 @@ client.registry
     ['util', 'Utility'],
     ['sound', 'Sound'],
     ['text', 'Edit Text'],
-    ['reminder', 'Reminder']
+    ['reminder', 'Reminder'],
+    ['games', 'Games'],
   ])
   // .registerDefaultCommands({
   //   help: false,

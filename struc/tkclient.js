@@ -32,6 +32,7 @@ module.exports = class TakaClient extends CommandoClient {
         this.redis = Redis ? Redis.db : null
         this.timers = new timerStruc(this)
         this.activities = activities
+        this.games = new Collection()
         this.shitPoster = POSTER_ID && POSTER_TOKEN ? new ShitposterClient(POSTER_ID, POSTER_TOKEN, {
             subreddits,
             postTypes: ['image', 'rich:video'],
