@@ -17,19 +17,14 @@
   },
   "homepage": "https://github.com/azuradara/TAKABOT#readme",
   "dependencies": {
-    "@discordjs/opus": "github:discordjs/opus",
+    "@discordjs/collection": "^0.1.6",
     "common-tags": "^1.8.0",
     "custom-translate": "^2.2.8",
     "discord.js": "^12.4.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
-    "dotenv": "^8.2.0",
-    "fs": "0.0.1-security",
-    "googleapis": "^65.0.0",
     "ioredis": "^4.19.4",
     "moment": "^2.29.1",
-    "node-fetch": "^2.6.1",
     "node-superfetch": "^0.1.10",
-    "request": "^2.88.2",
     "sherlockjs": "^1.4.0",
     "winston": "^3.3.3"
   }
