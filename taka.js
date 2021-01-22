@@ -1,5 +1,4 @@
-const { Intents, MessageEmbed } = require('discord.js')
-const { prefix, token, ownerID, mongodbpath } = require('./config.json')
+const { prefix, token, ownerID } = require('./config.json')
 const path = require('path')
 
 const TakaClient = require('./struc/tkclient')
