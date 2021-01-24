@@ -17,28 +17,29 @@ module.exports = class CatCommand extends Command {
 					name: 'TheCatAPI',
 					url: 'https://thecatapi.com/',
 					reason: 'API',
-					reasonURL: 'https://docs.thecatapi.com/'
-				}
-			]
+					reasonURL: 'https://docs.thecatapi.com/',
+				},
+			],
 		})
 	}
 
 	async run(msg) {
-        const catEmbed = new MessageEmbed()
-            .setColor('#FFFFFF')
-            .setFooter('TAKA_/高')
-            .setTimestamp()
-        try {
-            const { body } = await request
-                .get('https://api.thecatapi.com/v1/images/search')
-                .query({
-                    limit: 1,
-                    mime_types: 'jpg,png'
-                })
-                .set({ 'x-api-key': catapikey })
-            return msg.channel.send(catEmbed.setImage(body[0].url))
-        } catch (err) {
-            return msg.reply(`Ohnae: \`${err.message}\`. What do?`)
-        }
+		const catEmbed = new MessageEmbed()
+			.setColor('#FFFFFF')
+			.setFooter('TAKA_/高')
+			.setTimestamp()
+		try {
+			const { body } = await request
+				.get('https://api.thecatapi.com/v1/images/search')
+				.query({
+					limit: 1,
+					mime_types: 'jpg,png',
+				})
+				.set({ 'x-api-key': catapikey })
+			return msg.channel.send(catEmbed.setImage(body[0].url))
+		}
+		catch (err) {
+			return msg.reply(`Ohnae: \`${err.message}\`. What do?`)
+		}
 	}
-};
+}

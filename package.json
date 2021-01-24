@@ -22,6 +22,7 @@
     "custom-translate": "^2.2.8",
     "discord.js": "^12.4.1",
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "eslint": "^7.18.0",
     "ioredis": "^4.19.4",
     "moment": "^2.29.1",
     "node-superfetch": "^0.1.10",

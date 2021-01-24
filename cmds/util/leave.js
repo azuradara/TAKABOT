@@ -10,8 +10,8 @@ module.exports = class LeaveCommand extends Command {
 			description: 'sadge',
 			guildOnly: true,
 			guarded: true,
-			userPermissions: ['MOVE_MEMBERS']
-		});
+			userPermissions: ['MOVE_MEMBERS'],
+		})
 	}
 
 	run(msg) {
@@ -20,4 +20,4 @@ module.exports = class LeaveCommand extends Command {
 		connection.channel.leave()
 		return msg.channel.send('<a:Peace:679443513372442637>')
 	}
-};
+}

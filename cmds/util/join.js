@@ -10,8 +10,8 @@ module.exports = class JoinCommand extends Command {
 			description: 'Joins call.',
 			guildOnly: true,
 			guarded: true,
-			userPermissions: ['CONNECT']
-		});
+			userPermissions: ['CONNECT'],
+		})
 	}
 
 	async run(msg) {
@@ -27,4 +27,4 @@ module.exports = class JoinCommand extends Command {
 		await voiceChannel.join()
 		return msg.channel.send(`<:Speed:758387599504048148> **${voiceChannel.name}**!`)
 	}
-};
+}

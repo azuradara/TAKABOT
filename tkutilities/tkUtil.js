@@ -1,61 +1,62 @@
-const { stripIndents } = require('common-tags')
-const { User } = require('discord.js')
-const yesnocon = require('../assets/json/yesno.json')
-const yes = yesnocon.yes
-const no = yesnocon.no
+// const { stripIndents } = require('common-tags')
+// const { User } = require('discord.js')
+// const yesnocon = require('../assets/json/yesno.json')
+// const yes = yesnocon.yes
+// const no = yesnocon.no
 
 module.exports = class tkUtil {
 
-    static delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms))
-    }
+	static delay(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms))
+	}
 
-    static shuffle(array) {
-        const arr = array.slice(0)
-        for (let i = arr.length - 1; i >= 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            const temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
-        }
-        return arr;
-    }
+	static shuffle(array) {
+		const arr = array.slice(0)
+		for (let i = arr.length - 1; i >= 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1))
+			const temp = arr[i]
+			arr[i] = arr[j]
+			arr[j] = temp
+		}
+		return arr
+	}
 
-    static list(arr, conj = 'and') {
-        const len = arr.length;
-        if (len === 0) return ''
-        if (len === 1) return arr[0]
-        return `${arr.slice(0, -1).join(', ')}${len > 1 ? `${len > 2 ? ',' : ''} ${conj} ` : ''}${arr.slice(-1)}`
-    }
+	static list(arr, conj = 'and') {
+		const len = arr.length
+		if (len === 0) return ''
+		if (len === 1) return arr[0]
+		return `${arr.slice(0, -1).join(', ')}${len > 1 ? `${len > 2 ? ',' : ''} ${conj} ` : ''}${arr.slice(-1)}`
+	}
 
-    static list2(arr, conj = 'and') {
-        const len = arr.length;
-        if (len === 0) return ''
-        if (len === 1) return arr[0]
-        return `${arr.slice(0, -1).join('\n')}${len > 1 ? `${len > 2 ? '' : ''} ${conj} ` : ''}${arr.slice(-1)}`
-    }
+	static list2(arr, conj = 'and') {
+		const len = arr.length
+		if (len === 0) return ''
+		if (len === 1) return arr[0]
+		return `${arr.slice(0, -1).join('\n')}${len > 1 ? `${len > 2 ? '' : ''} ${conj} ` : ''}${arr.slice(-1)}`
+	}
 
-    static async tryReact(message, user, emoji, buEmoji) {
-        const dm = !message.guild
-        if (buEmoji && (!dm && message.channel.permissionsFor(user).has('USE_EXTERNAL_EMOJIS'))) {
-            emoji = buEmoji
-        }
-        if (dm || message.channel.permissionsFor(user).has(['ADD_REACTIONS', 'READ_MESSAGE_HISTORY'])) {
-            try {
-                await message.react(emoji)
-            } catch { return null }
-        } return null
-    }
+	static async tryReact(message, user, emoji, buEmoji) {
+		const dm = !message.guild
+		if (buEmoji && (!dm && message.channel.permissionsFor(user).has('USE_EXTERNAL_EMOJIS'))) {
+			emoji = buEmoji
+		}
+		if (dm || message.channel.permissionsFor(user).has(['ADD_REACTIONS', 'READ_MESSAGE_HISTORY'])) {
+			try {
+				await message.react(emoji)
+			}
+			catch { return null }
+		} return null
+	}
 
-    static embedURL(title, url, display) {
-        return `[${title}](${url.replaceAll(')', '%29')}${display ? ` "${display}"` : ''})`
-    }
+	static embedURL(title, url, display) {
+		return `[${title}](${url.replaceAll(')', '%29')}${display ? ` "${display}"` : ''})`
+	}
 
-    static formatNum(number) {
-        return number > 999 ? `${(number/1000).toLocaleString(undefined, { maximumFractionDigits: 1})}K` : number
-    }
+	static formatNum(number) {
+		return number > 999 ? `${(number / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 })}K` : number
+	}
 
-    static shorten(text, maxLen = 2000) {
-        return text.length > maxLen ? `${text.substr(0, maxLen - 3)}..` : text
-    }
+	static shorten(text, maxLen = 2000) {
+		return text.length > maxLen ? `${text.substr(0, maxLen - 3)}..` : text
+	}
 }
