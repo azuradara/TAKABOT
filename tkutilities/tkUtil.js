@@ -56,6 +56,10 @@ module.exports = class tkUtil {
 		return number > 999 ? `${(number / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 })}K` : number
 	}
 
+	static formatNumK(number) {
+		return number > 999 ? `${(number / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 })}K` : number
+	}
+
 	static shorten(text, maxLen = 2000) {
 		return text.length > maxLen ? `${text.substr(0, maxLen - 3)}..` : text
 	}

@@ -8,7 +8,7 @@ const winston = require('winston')
 const Redis = require('./Redis')
 const timerStruc = require('./TimerStruc')
 const ShitposterClient = require('./ShitPoster')
-// const subreddits = require('../assets/json/shit')
+const subreddits = require('../assets/json/shit')
 const {
 	POSTER_ID,
 	POSTER_TOKEN,
