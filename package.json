@@ -18,6 +18,7 @@
   "homepage": "https://github.com/azuradara/TAKABOT#readme",
   "dependencies": {
     "@discordjs/collection": "^0.1.6",
+    "@discordjs/opus": "^0.5.0",
     "common-tags": "^1.8.0",
     "custom-translate": "^2.2.8",
     "discord.js": "^12.4.1",
